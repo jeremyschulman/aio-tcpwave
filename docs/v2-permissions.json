@@ -1,0 +1,197 @@
+[
+   {
+      "name": "auth",
+      "description": "Full control of authorization",
+      "category": "Authorization"
+   },
+   {
+      "name": "auth:r",
+      "description": "Read access to authorization",
+      "category": "Authorization"
+   },
+   {
+      "name": "token:new",
+      "description": "Generate API token",
+      "category": "Authorization"
+   },
+   {
+      "name": "perm:check",
+      "description": "Check permissions",
+      "category": "Authorization"
+   },
+   {
+      "name": "account",
+      "description": "Full control of account settings",
+      "category": "Account"
+   },
+   {
+      "name": "account:r",
+      "description": "Read access to account settings",
+      "category": "Account"
+   },
+   {
+      "name": "user",
+      "description": "Full control of users",
+      "category": "User"
+   },
+   {
+      "name": "user:r",
+      "description": "Read access to users",
+      "category": "User"
+   },
+   {
+      "name": "hiq",
+      "description": "Full control of HIQ",
+      "category": "HIQ"
+   },
+   {
+      "name": "hiq:r",
+      "description": "Read access to HIQ",
+      "category": "HIQ"
+   },
+   {
+      "name": "hiq:enable",
+      "description": "Enable HIQ (non-HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "org",
+      "description": "Full control of HIQ organizations (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "org:new",
+      "description": "Create HIQ organization (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "org:del",
+      "description": "Delete HIQ organization (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "org:rename",
+      "description": "Rename HIQ organization (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "hiq.ctx",
+      "description": "Full control of HIQ Context (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "hiq.ctx:r",
+      "description": "Read access to HIQ Context (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "hiq.ctx:w",
+      "description": "Switching HIQ Context (HIQ account only)",
+      "category": "HIQ"
+   },
+   {
+      "name": "device",
+      "description": "Full control of devices",
+      "category": "Device"
+   },
+   {
+      "name": "device:r",
+      "description": "Read access to devices",
+      "category": "Device"
+   },
+   {
+      "name": "device:list",
+      "description": "Get device list",
+      "category": "Device"
+   },
+   {
+      "name": "device:view",
+      "description": "View device details",
+      "category": "Device"
+   },
+   {
+      "name": "device:new",
+      "description": "Device onboarding",
+      "category": "Device"
+   },
+   {
+      "name": "device:del",
+      "description": "Delete device",
+      "category": "Device"
+   },
+   {
+      "name": "device:cli",
+      "description": "Send CLI to device",
+      "category": "Device"
+   },
+   {
+      "name": "device:deploy",
+      "description": "Device push config",
+      "category": "Device"
+   },
+   {
+      "name": "device:manage",
+      "description": "Change management status to MANAGED",
+      "category": "Device"
+   },
+   {
+      "name": "device:unmanage",
+      "description": "Change management status to UNMANAGED",
+      "category": "Device"
+   },
+   {
+      "name": "device:reboot",
+      "description": "Reboot device",
+      "category": "Device"
+   },
+   {
+      "name": "client",
+      "description": "Full control of clients",
+      "category": "Client"
+   },
+   {
+      "name": "client:r",
+      "description": "Read access to clients",
+      "category": "Client"
+   },
+   {
+      "name": "locations",
+      "description": "Full control of locations",
+      "category": "Locations"
+   },
+   {
+      "name": "locations:r",
+      "description": "Read access to locations",
+      "category": "Locations"
+   },
+   {
+      "name": "network-policy",
+      "description": "Full control of network-policy",
+      "category": "Network-Policy"
+   },
+   {
+      "name": "network-policy:r",
+      "description": "Read access to network-policy",
+      "category": "Network-Policy"
+   },
+   {
+      "name": "ssid",
+      "description": "Full control of SSID",
+      "category": "SSID"
+   },
+   {
+      "name": "ssid:r",
+      "description": "Read access to SSID",
+      "category": "SSID"
+   },
+   {
+      "name": "pcg-key-based",
+      "description": "Full control of PCG key based",
+      "category": "PCG"
+   },
+   {
+      "name": "pcg-key-based:r",
+      "description": "Read access to PCG key based",
+      "category": "PCG"
+   }
+]
