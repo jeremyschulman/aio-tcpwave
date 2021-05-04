@@ -9,7 +9,7 @@ from os import getenv
 # Public Imports
 # -----------------------------------------------------------------------------
 
-from httpx import AsyncClient  # from httpx import  Response
+from httpx import AsyncClient
 
 # from tenacity import retry, wait_exponential
 

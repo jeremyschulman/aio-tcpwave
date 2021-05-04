@@ -2,9 +2,8 @@
 # System Imports
 # -----------------------------------------------------------------------------
 
-from typing import Optional, Sequence, Dict
+from typing import Optional, Sequence, Dict, Callable
 import asyncio
-import re
 
 # -----------------------------------------------------------------------------
 # Public Imports
@@ -28,7 +27,7 @@ class TCPWaveDCHP(TCPWaveClient):
     """
 
     def __init__(self, *vargs, **kwargs):
-        super(TCPWaveDCHP, self).__init__()
+        super(TCPWaveDCHP, self).__init__(*vargs, **kwargs)
         self.dhcp_servers: Optional[Dict[str]] = dict()
 
     async def fetch_dhcp_servers(self, **params):
@@ -151,56 +150,9 @@ class TCPWaveDCHP(TCPWaveClient):
 
         return None
 
-    async def find_dhcp_lease_name(
-        self,
-        name: Optional[str] = None,
-        name_regx: Optional[str] = None,
-        servers: Optional[Sequence[str]] = None,
+    async def find_dhcp_lease_matching(
+        self, matcher: Callable[[Dict], bool], servers: Optional[Sequence[str]] = None
     ) -> Sequence[dict]:
-        """
-        This coroutine will find all DHCP lease records whose "name" field matches
-        the provided value.
-
-        If `name_regx` is provide then the matching is done using a case-insensitive
-        regular expression match using this value.
-
-        If `name` is provided, then matching is found within the record; using
-        a case-ignore match.  For exmaple: if `name` is "Jeremy" a match would
-        be found for a DHCP lease with name of "JEREMY-LAPTOP"
-
-        Parameters
-        ----------
-        name: str
-            Name match
-
-        name_regx: str
-            Name match using regular expression
-
-        servers:
-            Optional list of DHCP server names.  If not provided, then all
-            avaialble DHCP servers will be checked.
-
-        Returns
-        -------
-        List of matching DHCP lease records, or empty-list if none found.
-        """
-
-        if name_regx:
-            matcher_re = re.compile(name, re.IGNORECASE).search
-
-            def matcher(_rec):
-                matcher_re(string=_rec["name"])
-
-        # find the `name` value in the DHCP lease record; case-ignore
-        elif name:
-            name = name.lower()
-
-            def matcher(_rec):
-                return False if not _rec["name"] else name in _rec["name"].lower()
-
-        else:
-            raise RuntimeError("name or name_regx required")
-
         found_records = list()
 
         async for rec in self.fetch_dhcp_leases(servers=servers):
