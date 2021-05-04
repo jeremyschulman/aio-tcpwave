@@ -60,10 +60,8 @@ class TCPWaveClient(AsyncClient):
     ):
         kwargs.setdefault("timeout", self.DEFAULT_TIMEOUT)
         kwargs.setdefault("verify", False)
-
-        # make `base_url` a requirement
-
         kwargs.setdefault("base_url", getenv("TCPWAVE_ADDR"))
+
         if not kwargs["base_url"]:
             raise RuntimeError("Missing required base_url")
 
@@ -96,6 +94,7 @@ class TCPWaveClient(AsyncClient):
     #                            AsyncClient Overrides
     # -----------------------------------------------------------------------------
 
+    # TODO: may add later depending on how the TCPWave API handles concurrency
     # async def request(self, *vargs, **kwargs) -> Response:
     #     @retry(wait=wait_exponential(multiplier=1, min=4, max=10))
     #     async def _do_rqst():

@@ -20,10 +20,8 @@ from .client import TCPWaveClient
 
 class TCPWaveDCHP(TCPWaveClient):
     """
-    This TCPWave client mixin provides DCHP related features.
-
-    The caller needs to invoke the `fetch_dhcp_servers` method before calling
-    any of other DHCP "find" methods.
+    This TCPWave client mixin provides DCHP related features, most importantly
+    finding active DHCP lease records.
     """
 
     def __init__(self, *vargs, **kwargs):
@@ -42,7 +40,7 @@ class TCPWaveDCHP(TCPWaveClient):
 
         Returns
         -------
-        List of DHCP server records.
+        List of DHCP server records (dict) from TCPWave API.
         """
         res = await self.get(
             "/dhcpserver/list", params=params or dict(orgName=self.tcpwave_org)
@@ -66,6 +64,9 @@ class TCPWaveDCHP(TCPWaveClient):
         ------
         DHCP lease record (dict)
         """
+
+        if not self.dhcp_servers:
+            await self.fetch_dhcp_servers()
 
         servers_ip = (
             [self.dhcp_servers[s_] for s_ in servers]
