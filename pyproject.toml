@@ -14,7 +14,7 @@ packages = [
    {include = "aiotcpwave"}
 ]
 license = "Apache-2.0"
-version = "0.2.0"
+version = "0.0.2"
 description = "AsyncIO client for TCPWave"
 authors = ["Jeremy Schulman <jeremy.schulman@mlb.com>"]
 
@@ -23,6 +23,7 @@ authors = ["Jeremy Schulman <jeremy.schulman@mlb.com>"]
 python = "^3.8"
 httpx = "^0.17.1"
 tenacity = "^7.0.0"
+bidict = "^0.21.2"
 
 [tool.poetry.dev-dependencies]
 invoke = "^1.5.0"
