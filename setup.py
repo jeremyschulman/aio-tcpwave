@@ -9,7 +9,7 @@ install_requires = ["httpx>=0.17.1,<0.18.0", "tenacity>=7.0.0,<8.0.0"]
 
 setup_kwargs = {
     "name": "aio-tcpwave",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "AsyncIO client for TCPWave",
     "long_description": None,
     "author": "Jeremy Schulman",
