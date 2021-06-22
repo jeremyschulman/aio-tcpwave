@@ -14,7 +14,7 @@ packages = [
    {include = "aiotcpwave"}
 ]
 license = "Apache-2.0"
-version = "0.0.2"
+version = "0.0.3"
 description = "AsyncIO client for TCPWave"
 authors = ["Jeremy Schulman <jeremy.schulman@mlb.com>"]
 
