@@ -19,13 +19,13 @@ from bidict import bidict
 from .client import TCPWaveClient
 
 
-class TCPWaveObjectDetails(TCPWaveClient):
+class TCPWaveFetchIpDetails(TCPWaveClient):
     """
     This mixin client is used to obtain object details, e.g., hostname
     """
 
     @TCPWaveClient.simple_api
-    async def fetch_object_details(self, ip_address: str):
+    async def fetch_ip_details(self, ip_address: str):
         """
         This returns the API record for the given IP Address.  The API
         record includes fields such as the name.
