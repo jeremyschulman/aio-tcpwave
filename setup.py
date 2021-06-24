@@ -12,7 +12,7 @@ install_requires = \
 
 setup_kwargs = {
     'name': 'aio-tcpwave',
-    'version': '0.0.2',
+    'version': '0.0.4',
     'description': 'AsyncIO client for TCPWave',
     'long_description': None,
     'author': 'Jeremy Schulman',

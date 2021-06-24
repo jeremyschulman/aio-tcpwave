@@ -19,14 +19,14 @@ from bidict import bidict
 from .client import TCPWaveClient
 
 
-class TCPWaveDCHP(TCPWaveClient):
+class TCPWaveDHCP(TCPWaveClient):
     """
-    This TCPWave client mixin provides DCHP related features, most importantly
+    This TCPWave client mixin provides DHCP related features, most importantly
     finding active DHCP lease records.
     """
 
     def __init__(self, *vargs, **kwargs):
-        super(TCPWaveDCHP, self).__init__(*vargs, **kwargs)
+        super(TCPWaveDHCP, self).__init__(*vargs, **kwargs)
         self.dhcp_servers = bidict()
 
     async def fetch_dhcp_servers(self, **params):
