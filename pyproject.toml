@@ -21,8 +21,8 @@ authors = ["Jeremy Schulman <jeremy.schulman@mlb.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-httpx = "^0.17.1"
-tenacity = "^7.0.0"
+httpx = "*"
+tenacity = "*"
 bidict = "^0.21.2"
 
 [tool.poetry.dev-dependencies]
